@@ -1,3 +1,7 @@
+:root {
+    font-size: 14px;
+}
+
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -14,7 +18,7 @@ p {
 
 .main {
     width: 35rem;
-    margin: 2rem auto;
+    margin: 1rem auto;
 }
 
 .input-section {
