@@ -10,6 +10,8 @@ const lengthOut = document.getElementById("length-out")
 const volumeOut = document.getElementById("volume-out")
 const massOut = document.getElementById("mass-out")
 
+
+
 // button converts input field and outputs new values
 convertBtn.addEventListener("click", function(){
     const inputValue = Number(inputNumber.value)
@@ -30,3 +32,12 @@ convertBtn.addEventListener("click", function(){
     massOut.textContent = `${inputValue} kilos = ${pounds} pounds | ${inputValue} pounds = ${kilos} kilos`
     
 })
+
+// prevents user input to exceed max value
+inputNumber.oninput = function () {
+    var max = parseInt(this.max);
+
+    if (parseInt(this.value) > max) {
+        this.value = max; 
+    }
+}
