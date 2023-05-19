@@ -33,13 +33,27 @@ function convertNumber() {
 // button converts input field and outputs new values
 convertBtn.addEventListener("click", convertNumber)
 
-// prevents user input to exceed max value
+// prevents user input to start with 0 or exceed max value
 inputNumber.oninput = function () {
-    var max = parseInt(this.max);
+    const max = parseInt(this.max);
+    const val = this.value;
 
-    if (parseInt(this.value) > max) {
+    if(val.startsWith("0")){
+        this.value = "0";
+     } else if (parseInt(this.value) > max) {
         this.value = max; 
     }
 }
+
+// resizes input field to fit input value
+inputNumber.addEventListener('input', resizeInput)
+
+function resizeInput() {
+    if (this.value.length > 2) {
+        this.style.width = this.value.length + 1 + "ch";
+    } else {
+        this.style.width= 3 + "ch"
+    }
+  }
 
 convertNumber()

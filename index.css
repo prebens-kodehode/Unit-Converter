@@ -16,7 +16,7 @@ p {
     margin-top: 0;    
 }
 
-.main {
+main {
     width: 40rem;
     margin: 1rem auto;
 }
@@ -35,7 +35,8 @@ p {
 
 #input-number {
     all: unset;
-    width: 13rem;
+    display: inline-block;
+    width: 3ch;
     height: 5rem;
     background-color: #6943FF;
     border: solid #B295FF .2rem;
@@ -53,6 +54,7 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 #convert-btn {
@@ -65,15 +67,17 @@ input[type=number] {
     border-radius: .3rem;
     background-color: #ffffff;
     margin: 1rem 0 2rem 0;
+    transition: transform 500ms;
 }
-
 #convert-btn:hover {
-    transform: scale(1.05);
+    transform: translateY(-0.2rem);
+    transition: transform 200ms;
     outline: solid #B295FF .2rem;
 }
 
 #convert-btn:active {
     transform: scale(.98);
+    transition: transform 100ms;
     outline: solid #B295FF .2rem;
 }
 
